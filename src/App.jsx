@@ -1,120 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [showDetails, setShowDetails] = useState(false)
+  const [daysLeft, setDaysLeft] = useState(0)
+  
+  // Fecha de la boda (cámbiala por tu fecha)
+  const weddingDate = new Date('2026-05-16T16:00:00')
+  
+  useEffect(() => {
+    const calculateDaysLeft = () => {
+      const today = new Date()
+      const difference = weddingDate - today
+      const days = Math.ceil(difference / (1000 * 60 * 60 * 24))
+      setDaysLeft(days > 0 ? days : 0)
+    }
+    
+    calculateDaysLeft()
+  }, [])
+  
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="wedding-container">
+      {/* Hero Section */}
+      <div className="hero-section">
+        <div className="overlay"></div>
+        <div className="hero-content">
+          <p className="greeting">¡Nos Casamos!</p>
+          <h1 className="names">Patricia & Dario</h1>
+          <div className="date-badge">
+            <span>16 de Mayo, 2026</span>
+          </div>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
+      </div>
+      
+      {/* Contador regresivo */}
+      <div className="countdown-section">
+        <div className="countdown-number">
+          <span className="days-text">Faltan </span>
+          <span className="days">{daysLeft}</span>
+          <span className="days-text"> días</span>
         </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
+      </div>
+      
+      {/* Mapa y ubicación */}
+      <div className="map-section">
+        <h2>¿Cómo llegar?</h2>
+        <div className="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14679.6318773124!2d-82.38631170106464!3d23.100464558655563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88cd7156cdbe9eb7%3A0x6fa3651b36c1e781!2sPISCINA%20EL%20MORA&#39;O!5e0!3m2!1ses-419!2scu!4v1775242748878!5m2!1ses-419!2scu" 
+            width="100%" 
+            height="300" 
+            style={{border: 0}}
+            allowFullScreen=""
+            loading="lazy"
+            title="Mapa ubicación"
+          ></iframe>
+        </div>
+        <button className="map-btn" onClick={() => window.open('https://maps.app.goo.gl/8GGMkMrXb8rDeYZm7', '_blank')}>
+          Abrir en Google Maps 📍
         </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      </div>
+      
+      {/* Footer */}
+      <footer className="footer">
+        <p>✨ Los esperamos con mucho cariño ✨</p>
+        <p> Patricia y Dario</p>
+      </footer>
+    </div>
   )
 }
 
