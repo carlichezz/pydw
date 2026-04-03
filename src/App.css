@@ -1,0 +1,26 @@
+.container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 8px;
+  background: #f0f0f0;
+  margin: 1rem auto;
+  max-width: 300px;
+}
+
+button {
+  background: #f6821f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #e06c0a;
+}
