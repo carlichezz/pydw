@@ -1,3 +1,20 @@
-Invitados: {
-    Arielito
-}
+[
+  {
+    "id": 1,
+    "name": "María González",
+    "email": "maria@example.com",
+    "phone": "5512345678",
+    "invitationSent": false,
+    "confirmed": false,
+    "uniqueLink": "https://tu-boda.com/invite/abc123"
+  },
+  {
+    "id": 2,
+    "name": "Carlos Rodríguez",
+    "email": "carlos@example.com",
+    "phone": "5512345679",
+    "invitationSent": false,
+    "confirmed": false,
+    "uniqueLink": "https://tu-boda.com/invite/def456"
+  }
+]

@@ -585,3 +585,71 @@ body {
     align-items: center;
   }
 }
+/* Estilos del login admin */
+.admin-secret-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(194, 178, 128, 0.5);
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.admin-secret-btn:hover {
+  opacity: 1;
+}
+
+.admin-login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.admin-login-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.admin-login-modal input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  border: 1px solid #E8DCC8;
+  border-radius: 5px;
+}
+
+.admin-login-modal button {
+  background: #C2B280;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-btn {
+  margin-top: 1rem;
+  background: #999 !important;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
