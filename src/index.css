@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
-:root {
-  font-family: 'Playfair Display', 'Georgia', serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -11,6 +7,24 @@
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--beige-claro);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--caqui);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--caqui-oscuro);
 }
