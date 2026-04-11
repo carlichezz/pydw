@@ -114,8 +114,8 @@ function WeddingInvitation() {
       <footer className="wedding-footer">
         <div className="footer-content">
           <p className="footer-greeting">Con mucho cariño,</p>
-          <p className="footer-names">Alejandro & Valeria</p>
-          <div className="social-hashtag">#AleYVal2025</div>
+          <p className="footer-names">Dario & Patry</p>
+          <div className="social-hashtag"></div>
           <p className="footer-thanks">¡Gracias por ser parte de este sueño!</p>
         </div>
       </footer>
